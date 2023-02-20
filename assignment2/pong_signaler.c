@@ -22,7 +22,7 @@ int main()
     PING.msg_type = 1;
     PING.msg_type = "PONG";
     
-    // msgsnd to send message
+    
 	if (msgsnd(msgid, &PONG, sizeof(PING), 0) == -1)
     {
         perror("Unable to send a message\n");
@@ -40,7 +40,7 @@ int main()
     while(bytes_count != -1)
     {
         msgsnd(msgid, &PONG, sizeof(PING), 0);
-        // display the message
+        
 	    printf("%s \n", PONG.msg_text);
     }
     
